@@ -1,14 +1,21 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-      Ionic Blank
+      ล็อกอินด้วย Facebook
     </ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+  <button ion-button full (click)="loginWithFB()">ล็อกอินด้วย Facebook</button>
+ 
+  <ion-card *ngIf="userData">
+    <ion-card-header>{{ userData.username }}</ion-card-header>
+    <img [src]="userData.picture" />
+    <ion-card-content>
+      <p>Email: {{ userData.email }}</p>
+      <p>ชื่อ: {{ userData.first_name }}</p>
+    </ion-card-content>
+  </ion-card>
+  
 </ion-content>
